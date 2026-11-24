@@ -12,3 +12,11 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 @media (min-width:600px) { .calculator { padding-top:45px; } .keypad button { min-height:68px; } }
 .keypad .zero { grid-column:span 4; }
 input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; } input[type="number"] { appearance:textfield; -moz-appearance:textfield; }
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #8e8e93;
+  padding: 16px 0 10px;
+  letter-spacing: 0.2px;
+  user-select: none;
+}
