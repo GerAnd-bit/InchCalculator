@@ -8,10 +8,17 @@ A lightweight, offline-friendly calculator for feet and inches.
 - Fractional inch support
 - Addition and subtraction
 - Fraction simplification
-- Calculation history
+- Calculation history with local storage
 - Copy results
+- System, Light, and Dark themes
 - Offline support (PWA)
-- Installable on mobile devices
+- Installable on mobile and desktop devices
+- Responsive interface optimized for mobile screens
+
+## Privacy
+
+Calculation history and theme preferences are stored locally on the device.
+No account is required.
 
 ## Copyright
 
