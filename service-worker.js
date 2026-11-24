@@ -1,5 +1,5 @@
 
-const CACHE = 'inch-calculator-v9';
+const CACHE = 'inch-calculator-v10';
 
 const FILES = [
     './',
