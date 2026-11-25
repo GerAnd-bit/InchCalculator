@@ -93,5 +93,22 @@
     historyStore.clear(); renderHistory();
   });
   render();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
+  if ('serviceWorker' in navigator) {
+    let reloadPending = false;
+
+    navigator.serviceWorker.register('./service-worker.js').then(registration => {
+      registration.addEventListener('updatefound', () => {
+        const installing = registration.installing;
+        if (!installing || !navigator.serviceWorker.controller) return;
+        reloadPending = true;
+      });
+    });
+
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (reloadPending) {
+        reloadPending = false;
+        window.location.reload();
+      }
+    });
+  }
 })();

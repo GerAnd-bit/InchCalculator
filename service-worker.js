@@ -1,5 +1,5 @@
 
-const CACHE = 'inch-calculator-v10';
+const CACHE = 'inch-calculator-v11';
 
 const FILES = [
     './',
@@ -16,7 +16,7 @@ const FILES = [
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE).then(cache => cache.addAll(FILES))
+        caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting())
     );
 });
 
