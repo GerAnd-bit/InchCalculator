@@ -18,7 +18,7 @@
     const fraction = formatFraction(amount % 16);
     const parts = [];
     if (feet) parts.push(`${feet}′`);
-    if (inches || fraction || !feet) parts.push(`${inches ? `${inches}${fraction ? ' ' : ''}` : ''}${fraction}″`);
+    if (inches || fraction || !feet) parts.push(`${inches ? `${inches}${fraction ? '\u2007' : ''}` : ''}${fraction}″`);
     return sign + parts.join(' ');
   }
   function formatTotalInches(value) {
@@ -26,7 +26,7 @@
     const amount = Math.abs(value);
     const whole = Math.floor(amount / 16);
     const fraction = formatFraction(amount % 16);
-    return `${sign}${whole}${fraction ? ` ${fraction}` : ''} inch${whole === 1 && !fraction ? '' : 'es'}`;
+    return `${sign}${whole}${fraction ? `\u2007${fraction}` : ''} inch${whole === 1 && !fraction ? '' : 'es'}`;
   }
   function parseOperand(source) {
     let s = source.trim().replaceAll('″', ' in ').replaceAll('′', ' ft ');
